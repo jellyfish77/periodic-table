@@ -41,11 +41,7 @@ int add_record(struct Element *e, FILE *fp)
     fprintf(fp,"%s, %s, %d, %.6f\n", e->symbol, e->name, e-> atomic_no, e->atomic_wt);
     printf("Position of file pointer is : ");
     printf("%ld \n", ftell(fp));
-
     //fwrite(&e)
-
-    fclose(fp);
-
     return true;
 }
 
@@ -59,11 +55,9 @@ bool modify_record()
 {
 }
 
-bool record_exists(struct Element e)
+bool record_exists(struct Element *e, FILE *fp)
 {
-
-
-
+    fseek(fp, 0, SEEK_END); // move to end of file
     return false;
 }
 
@@ -81,6 +75,12 @@ FILE *open_file(char *filename)
     return fp;
 }
 
+long file_size(FILE *fp)
+{
+    fseek(fp, 0, SEEK_END);
+    return ftell(fp);
+}
+
 void print_record(struct Element *e)
 {
     printf("Element Record\n");
@@ -92,8 +92,8 @@ void print_record(struct Element *e)
 }
 
 
-// Function to return element record(s) matching all members of e
-bool get_records(struct Element e, bool match_all)
+// Read all records from file into an array of Elements
+bool get_records(FILE *fp)
 {
 }
 
@@ -127,7 +127,10 @@ int main()
     strcpy(e.symbol, "H");
     e.atomic_no = 1;
     e.atomic_wt = 1.008;
-    printf("%d\n", add_record(&e, fp));
+    printf("Add record: %d\n", add_record(&e, fp));
+    printf("File size: %ld (bytes)\n", file_size(fp));
+    printf("Record exists? %d\n", record_exists(&e, fp));
+    fclose(fp);
 
     //printf("%d\n", test_add_record());
     getchar();
