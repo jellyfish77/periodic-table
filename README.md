@@ -1,19 +1,32 @@
 # periodic-table
+
 Implementation of https://www.codewithc.com/modern-periodic-table-c-project/
+
+https://en.wikipedia.org/wiki/Periodic_table
 
 # Running with Dockerfile
 
-1. Build image with:
+## Build and run the Container
 
-    docker build -t periodic .
+1. Build image 'periodic' with:
 
-    This will compile the code.
+        docker build -t periodic .
 
-2. Run Image with:
+        docker build -t ottoq/periodic:0.1 --no-cache  .
 
-    docker run -it --rm --name periodic-running periodic
 
-    This will run the code.
+    This will also compile the code.
 
+2. Run container as "periodic-container":
+
+        docker run -it --rm --name periodic-container periodic
+
+        docker run -it --rm --name periodic-container ottoq/periodic:0.1
+
+    This will also run the code.
+
+## Login to Container with zsh
+
+    docker exec -it periodic-container zsh
 
 See https://hub.docker.com/_/gcc/
