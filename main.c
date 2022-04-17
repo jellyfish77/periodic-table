@@ -16,6 +16,7 @@ struct Element
 void print_record(struct Element *e);
 FILE *open_file(char *filename);
 bool record_exists(char *element_name, FILE *fp);
+void run_tests();
 
 #define ELEMENTS_FILE ("elements.csv")
 #define SEPERATOR (',')
