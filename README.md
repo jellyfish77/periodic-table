@@ -12,6 +12,8 @@ https://en.wikipedia.org/wiki/Periodic_table
 
         docker build -t periodic .
 
+    or:
+
         docker build -t ottoq/periodic:0.1 --no-cache  .
 
 
@@ -20,6 +22,8 @@ https://en.wikipedia.org/wiki/Periodic_table
 2. Run container as "periodic-container":
 
         docker run -it --rm --name periodic-container periodic
+
+    or:
 
         docker run -it --rm --name periodic-container ottoq/periodic:0.1
 
