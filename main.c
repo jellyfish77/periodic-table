@@ -60,6 +60,13 @@ bool modify_record()
 {
 }
 
+/**
+ * @brief Return field from specified column in csv string
+ *
+ * @param line      The scv string (i.e. line)
+ * @param column    The column (field position) to return
+ * @return          The field or NULL if not found
+ */
 const char* get_field(char* line, int num)
 {
     const char* tok;
