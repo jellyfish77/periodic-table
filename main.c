@@ -60,7 +60,7 @@ bool modify_record()
 {
 }
 
-const char* getfield(char* line, int num)
+const char* get_field(char* line, int num)
 {
     const char* tok;
     for (tok = strtok(line, ",");
@@ -82,8 +82,8 @@ bool record_exists(char *element_name, FILE *fp)
     while (fgets(line, 1024, fp))
     {
         char* tmp = strdup(line);
-        //printf("Matching symbol: %s against: %s\n", getfield(tmp, 1), element_name);
-        if (strcmp(getfield(tmp, 1), element_name) == 0)
+        //printf("Matching symbol: %s against: %s\n", get_field(tmp, 1), element_name);
+        if (strcmp(get_field(tmp, 1), element_name) == 0)
         {
             result = true;
         }
