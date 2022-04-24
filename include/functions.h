@@ -27,6 +27,6 @@ FILE *open_file(char *filename);
 bool modify_record(struct Element *e, FILE *fp);
 bool delete_record(char *element_symbol, FILE *fp);
 struct Element * get_record(char *element_symbol, FILE *fp);
-
+struct Element * sort_records(struct Element *e);
 
 #endif

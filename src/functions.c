@@ -130,6 +130,16 @@ struct Element * get_records(FILE *fp)
 {
 }
 
+
+// Sort array of elements into order (by atomic number)
+// TODO: implement
+struct Element * sort_records(struct Element *e)
+{
+
+
+}
+
+
 bool test_add_record()
 {
     struct Element e;
