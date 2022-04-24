@@ -20,12 +20,12 @@ int add_record(struct Element *e, FILE *fp);
 bool record_exists(char *element_name, FILE *fp);
 const char* get_field(char* line, int num);
 bool test_add_record();
-bool get_records(FILE *fp);
+struct Element * get_records(FILE *fp);
 void print_record(struct Element *e);
 long file_size(FILE *fp);
 FILE *open_file(char *filename);
-bool modify_record();
-bool delete_record(struct Element e);
+bool modify_record(struct Element *e, FILE *fp);
+bool delete_record(char *element_symbol, FILE *fp);
 struct Element * get_record(char *element_symbol, FILE *fp);
 
 

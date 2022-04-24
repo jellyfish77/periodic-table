@@ -50,6 +50,8 @@ bool record_exists(char *element_name, FILE *fp)
     return result;
 }
 
+// Return an element from file matching specified symbol
+// TODO: implement
 struct Element * get_record(char *element_symbol, FILE *fp)
 {
 
@@ -77,19 +79,17 @@ const char* get_field(char* line, int num)
 }
 
 
-// Function to delete an element record matching symbol
+// Delete an element record from file matching symbol
 // TODO: implement
-bool delete_record(struct Element e)
+bool delete_record(char *element_symbol, FILE *fp)
 {
 }
 
-// Function to modify an element record matching symbol
+// Modify an Element record in file matching symbol from supplied Element
 // TODO: implement
-bool modify_record()
+bool modify_record(struct Element *e, FILE *fp)
 {
 }
-
-
 
 
 // return file pointer
@@ -124,7 +124,9 @@ void print_record(struct Element *e)
 
 
 // Read all records from file into an array of Elements
-bool get_records(FILE *fp)
+// TODO: implement
+// https://stackoverflow.com/questions/47028165/how-do-i-return-an-array-of-struct-from-a-function
+struct Element * get_records(FILE *fp)
 {
 }
 
