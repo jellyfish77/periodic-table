@@ -9,7 +9,7 @@ LIBRARIES   :=
 EXECUTABLE  := periodic
 
 # TODO: make this compatible with Linux
-DIR_GUARD=@cmd.exe /c mkdir $(@D)
+DIR_GUARD=@cmd.exe /c if not exist $(@D) mkdir $(@D)
 
 all: $(BIN)/$(EXECUTABLE)
 
