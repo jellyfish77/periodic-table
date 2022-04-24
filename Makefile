@@ -8,6 +8,8 @@ INCLUDE := include
 LIBRARIES   :=
 EXECUTABLE  := periodic
 
+# TODO: make this compatible with Linux
+DIR_GUARD=@cmd.exe /c mkdir $(@D)
 
 all: $(BIN)/$(EXECUTABLE)
 
@@ -16,6 +18,7 @@ run: clean all
 	./$(BIN)/$(EXECUTABLE)
 
 $(BIN)/$(EXECUTABLE): $(SRC)/*.c
+	$(DIR_GUARD)
 	$(CXX) $(CXX_FLAGS) -I$(INCLUDE) $^ -o $@ $(LIBRARIES)
 
 clean:
