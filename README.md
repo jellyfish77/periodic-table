@@ -4,6 +4,13 @@ Implementation of https://www.codewithc.com/modern-periodic-table-c-project/
 
 https://en.wikipedia.org/wiki/Periodic_table
 
+
+# Build with Make
+
+1. Run:
+
+        make
+
 # Running with Dockerfile
 
 ## Build and run the Container
