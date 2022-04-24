@@ -50,6 +50,12 @@ bool record_exists(char *element_name, FILE *fp)
     return result;
 }
 
+struct Element * get_record(char *element_symbol, FILE *fp)
+{
+
+
+}
+
 /**
  * @brief Return field from specified column in csv string
  *
@@ -68,4 +74,66 @@ const char* get_field(char* line, int num)
             return tok;
     }
     return NULL;
+}
+
+
+// Function to delete an element record matching symbol
+// TODO: implement
+bool delete_record(struct Element e)
+{
+}
+
+// Function to modify an element record matching symbol
+// TODO: implement
+bool modify_record()
+{
+}
+
+
+
+
+// return file pointer
+FILE *open_file(char *filename)
+{
+    FILE *fp = fopen(filename, "r+"); // must exist
+    if (fp == NULL) {
+        fp = fopen(filename, "w+"); // create empty
+        if (fp == NULL) {
+            printf("\nCannot open file...");
+                return NULL; // error
+        }
+    }
+    return fp;
+}
+
+long file_size(FILE *fp)
+{
+    fseek(fp, 0, SEEK_END);
+    return ftell(fp);
+}
+
+void print_record(struct Element *e)
+{
+    printf("Element Record\n");
+    printf("==============\n");
+    printf("Symbol:    %s\n", e->symbol);
+    printf("Name:      %s\n", e->name);
+    printf("Atomic No: %d\n", e->atomic_no);
+    printf("Atomic Wt: %.6f\n", e->atomic_wt);
+}
+
+
+// Read all records from file into an array of Elements
+bool get_records(FILE *fp)
+{
+}
+
+bool test_add_record()
+{
+    struct Element e;
+    strcpy(e.name, "Hydrogen");
+    strcpy(e.symbol, "H");
+    e.atomic_no = 1;
+    e.atomic_wt = 1.008;
+    //return add_record(&e);
 }
