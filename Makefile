@@ -14,7 +14,7 @@ DIR_GUARD=@cmd.exe /c if not exist $(@D) mkdir $(@D)
 all: $(BIN)/$(EXECUTABLE)
 
 run: clean all
-	clear
+	# clear
 	./$(BIN)/$(EXECUTABLE)
 
 $(BIN)/$(EXECUTABLE): $(SRC)/*.c
@@ -22,4 +22,4 @@ $(BIN)/$(EXECUTABLE): $(SRC)/*.c
 	$(CXX) $(CXX_FLAGS) -I$(INCLUDE) $^ -o $@ $(LIBRARIES)
 
 clean:
-	-rm $(BIN)/*
+	rm -rf $(BIN)/*
