@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include "functions.h"
+#include "element.h"
 
 
 // function declerations
@@ -34,9 +35,15 @@ void run_tests() {
     static const struct Element emptyElement = {};
 
     FILE *fp = open_file(ELEMENTS_FILE);
-    struct Element e;
 
+    struct Element e2;
+    e2 = set_element("H", "Hydrogen", 1, 1.00800);
+    e2 = set_element("Ti", "Titanium", 22, 47.867000);
+    e2 = set_element("Ag", "Silver", 47, 107.870000);
+
+    struct Element e;
     e = emptyElement; // empty struct
+
     strcpy(e.symbol, "H");
     strcpy(e.name, "Hydrogen");
     e.atomic_no = 1;
