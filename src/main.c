@@ -31,8 +31,12 @@ int main()
 
 void run_tests() {
 
+    static const struct Element emptyElement = {};
+
     FILE *fp = open_file(ELEMENTS_FILE);
     struct Element e;
+
+    e = emptyElement; // empty struct
     strcpy(e.symbol, "H");
     strcpy(e.name, "Hydrogen");
     e.atomic_no = 1;
@@ -41,10 +45,6 @@ void run_tests() {
     printf("File size: %ld (bytes)\n", file_size(fp));
     printf("Record exists? %d\n", record_exists(e.symbol, fp));
     print_record(&e);
-
-
-    //static const struct Element emptyElement = {};
-    // e = emptyElement;
 
     strcpy(e.symbol, "Ti");
     strcpy(e.name, "Titanium");
