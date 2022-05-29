@@ -9,6 +9,7 @@
  * @param e     The element to add
  * @return      The position of the record, -1 on error
  */
+// TODO: return pos
 int add_record(struct Element *e, FILE *fp)
 {
     if(record_exists(e->symbol, fp))
@@ -22,11 +23,11 @@ int add_record(struct Element *e, FILE *fp)
     fseek(fp, 0, SEEK_END); // move to end of file
     //printf("Position of file pointer is : ");
     //printf("%ld \n", ftell(fp));
-    fprintf(fp,"%s,%s,%d,%.6f\n", e->symbol, e->name, e-> atomic_no, e->atomic_wt);
+    return fprintf(fp,"%s,%s,%d,%.6f\n", e->symbol, e->name, e-> atomic_no, e->atomic_wt);
     //printf("Position of file pointer is : ");
     //printf("%ld \n", ftell(fp));
     //fwrite(&e)
-    return true;
+    //return true;
 }
 
 bool record_exists(char *element_name, FILE *fp)
