@@ -48,6 +48,7 @@ void run_tests() {
     test_add_element(&e, fp);
 
     // load test
+    /*
     int i;
     for (i = 1; i < 100; ++i)
     {
@@ -56,6 +57,7 @@ void run_tests() {
         e = set_element(symbol, "Unobtainium", 100, 200.123456);
         test_add_element(&e, fp);
     }
+    */
 
 
     fclose(fp);
